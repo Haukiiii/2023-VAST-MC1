@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAST 2023</title>
+</head>
+<body>
+    <div class = "", style="width:100%">
+        <div class="container">
+            <div id="tooltip" style="opacity:0; position:absolute;"></div>
+            <div class = "sidebar">
+                <div class="filter-options">
+                    <select class="svgSelect" id="svgSelector">
+                        <option value="svgFiltered0">Network 1</option>
+                        <option value="svgFiltered1">Network 2</option>
+                        <option value="svgFiltered2">Network 3</option>
+                        <option value="svgFiltered3">Network 4</option>
+                        <!-- Add more options for additional SVGs if needed -->
+                    </select>
+                    <input type="text" id="searchInput" placeholder="Search for node">
+                    <p>Filter node types</p>
+                    <div class="filter">
+                        <label><input type="checkbox" value="person"> Person</label>
+                        <div class="color-box person-color"></div>
+                    </div>
+                    <div class="filter">
+                        <label><input type="checkbox" value="organization"> Organization</label>
+                        <div class="color-box organization-color"></div>
+                    </div>
+                    <div class="filter">
+                        <label><input type="checkbox" value="company"> Company</label>
+                        <div class="color-box company-color"></div>
+                    </div>
+                    <div class="filter">
+                        <label><input type="checkbox" value="political_organization"> Political Organization</label>
+                        <div class="color-box political-organization-color"></div>
+                    </div>
+                    <div class="filter">
+                        <label><input type="checkbox" value="location"> Location</label>
+                        <div class="color-box location-color"></div>
+                    </div>
+                    <div class="filter">
+                        <label><input type="checkbox" value="vessel"> Vessel</label>
+                        <div class="color-box vessel-color"></div>
+                    </div>
+                    <div class="filter">
+                        <label><input type="checkbox" value="event"> Event</label>
+                        <div class="color-box event-color"></div>
+                    </div>
+                    <div class="filter">
+                        <label><input type="checkbox" value="movement"> Movement</label>
+                        <div class="color-box movement-color"></div>
+                    </div>
+                    <div class="filter">
+                        <label><input type="checkbox" value="notype"> No type</label>
+                        <div class="color-box no-type-color"></div>
+                    </div>
+                
+                    <p>Filter edge types</p>
+                    <div class="filter">
+                        <label><input type="checkbox" value="ownership"> Ownership</label>
+                        <div class="color-box ownership-color"></div>
+                    </div>
+                    <div class="filter">
+                        <label><input type="checkbox" value="membership"> Membership</label>
+                        <div class="color-box membership-color"></div>
+                    </div>
+                    <div class="filter">
+                        <label><input type="checkbox" value="family_relationship"> Family Relationship</label>
+                        <div class="color-box family-relationship-color"></div>
+                    </div>
+                    <div class="filter">
+                        <label><input type="checkbox" value="partnership"> Partnership</label>
+                        <div class="color-box partnership-color"></div>
+                    </div>
+                    
+                    <button class="fbutton" id="filterButton">Filter in full dataset</button>
+                    <button class="fbutton" id="filterCurrentNetwork">Filter current network</button>
+                    <button class="fbutton" id="getSelectedNodes">Force graph from parallel graph</button>
+                    <button class="fbutton" id="getAttributesMaybe">Get attribute network</button>
+                    <button class="fbutton" id="removePieCharts">Remove All Pie Charts</button>
+                    <button class="fbutton" id="removeParallelCharts">Remove Parallel Graphs</button>
+                    <button class="fbutton" id="findButton">Find marked rectangle nodes</button>
+                    <button class="fbutton" id="createFilteredDiagram">Create Filtered parallelGraph from marked rectangle nodes</button>
+                    <button class="fbutton" id="getSelectedNodesOnSecondGraphMaybeIfYouDoItCorrect">Generate force graph from new parallel graph</button>
+                    <button class="fbutton" id="treeButton">Switch to Tree View</button>
+                    <input type="text" id="searchBar" placeholder="Search for a node...">
+                </div>
+                <div class="DetailsOnDemand">
+                    <div id="detailsContainer" style="display:none;">
+                        <p id="detailsText"></p>
+                    </div>
+                </div>
+            </div>
+            <div><svg class="overview" id="svg1"></svg></div>
+            <div class="visualization-content">
+                <svg id="selectionRectangle" style="position:absolute; display:none;"></svg>
+                <div><svg class="svgFiltered" id="svgFiltered0" width="100%" height="800"></svg></div>
+                <div><svg class="svgFiltered" id="svgFiltered1" width="100%" height="800"></svg></div>
+                <div><svg class="svgFiltered" id="svgFiltered2" width="100%" height="800"></svg></div>
+                <div><svg class="svgFiltered" id="svgFiltered3" width="100%" height="800"></svg></div>
+            </div>
+            
+            <!-- Container elements for the pie charts -->
+        </div>
+        <div class= "test"> 
+            <div id= "Charts">
+            <div id="nodeTypesPie"></div>
+            <div id="linkTypesPie"></div>
+            <div id="connectionsPie"></div>
+        </div></div>
+        <div class="parallelGraph">
+        <div class ="lineGraph" id="lineGraph"></div>
+        <div class ="lineGraph" id="filteredContainer"></div>
+        </div>
+        <!-- Button to switch to hierarchical tree view -->
+        <div class="loading-state">
+            <div class="loading"></div>
+        </div>
+        <svg id="hierarchy" width=100% height="300px"></svg>
+        <!-- Your HTML content here -->
+    </div>
+    <!-- Link your JavaScript file -->
+    <script src="playground.js"></script>
+    <!--<script src="treeGraph.js"></script>-->
+    
+</body>
+</html>

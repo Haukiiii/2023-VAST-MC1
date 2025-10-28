@@ -1,0 +1,246 @@
+body{
+    background-color: white;
+}
+#hierarchy{
+    background-color: white;
+}
+h2{
+    color: red;
+}
+
+.highlight {
+    fill: yellow;
+}
+
+.loading-state {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid #ddd;
+    border-top-color: orange;
+    animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.container {
+    position: relative;
+}
+
+.visualization-content {
+    margin-left: 400px; /* Adjust margin as needed */
+    margin-top: 0; /* Add this line */
+}
+
+#searchInput {
+    width: 90%;
+    padding: 8px 12px;
+    margin-left: 3%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#searchBar {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 160px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+    display: none; /* Initially hidden */
+}
+
+.dropdown-content li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+#filterButton {
+    display: block;
+    margin-top: 10px;
+}
+
+.lineGraph{
+    margin-left: 500px;
+    padding-top: 200px;
+}
+
+.container {
+    position: relative;
+}
+.test{
+    margin-left: 400px;
+
+}
+#Charts{
+    background-color: #f0f0f0;
+}
+
+#nodeTypesPie {
+    margin-left: 20px;
+    display: inline-block;
+    background-color: #f0f0f0;
+
+}
+
+#linkTypesPie {
+    display: inline-block;
+    background-color: #f0f0f0;
+
+}
+
+#connectionsPie {
+    display: inline-block;
+    background-color: #f0f0f0;
+
+}
+
+#detailsContainer{
+    margin-top: 20px;
+}
+#detailsText{
+    margin-top: 10px;
+}
+
+#link-info{
+    margin-top: 200px;
+}
+
+
+
+.visualization-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Creates two columns of equal width */
+    grid-template-rows: 1fr 1fr; /* Creates two rows of equal height */
+    gap: 10px; /* Optional: Adds some space between the grid items */
+}
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 400px;
+    display: grid;
+}
+
+.detail-container {
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+.test{
+    margin-left: 400px;
+
+}
+.fbutton {
+    padding: 8px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 1px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e7;
+    width: 198px;
+  }
+  
+.fbutton:hover {
+    background-color: #e7e7e7;
+}
+
+.DetailsOnDemand {
+    position: fixed;
+    top: 0;
+    left: 200px;
+    height: 80%;
+    width: 200px;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+    border-right: 2px solid black ;
+}
+
+.filter-options {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80%;
+    width: 200px;
+    background-color: #f0f0f0;
+    overflow-y: auto;
+}
+
+.overview {
+    position: fixed;
+    top: 79%; 
+    left: 0;
+    width: 398px;
+    height: 400px;
+    background-color: #f0f0f0;
+    border: 2px solid black;
+}
+
+.filter {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.filter label {
+    flex-grow: 1;
+}
+
+.color-box {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border: 1px solid #ccc; /* Optional: Add border for better visibility */
+}
+
+.svgFiltered{
+border: 2px solid black;
+
+}
+
+/* Set colors for each type */
+.person-color { background-color: #bed6c0; } /* Example color */
+.organization-color { background-color: #cfb1ea; } /* Example color */
+.company-color { background-color: #c2ffc1; } /* Example color */
+.political-organization-color { background-color: #eca9bc; } /* Example color */
+.location-color { background-color: #6bdbdb; } /* Example color */
+.vessel-color { background-color: #e6b792; } /* Example color */
+.event-color { background-color: #85c4ec; } /* Example color */
+.movement-color { background-color: #d1d48d; } /* Example color */
+.no-type-color { background-color: grey; } /* Example color */
+
+.membership-color { background-color: #99dba7; } /* Example color */
+.ownership-color { background-color: #6bdbdb; } /* Example color */
+.family-relationship-color { background-color: #eca9bc; } /* Example color */
+.partnership-color { background-color: #cfb1ea; } /* Example color */
